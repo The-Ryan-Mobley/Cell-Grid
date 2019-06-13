@@ -120,9 +120,9 @@ function newgeneration(){
     for (let i = 0; i < 2547; i++) {
         
         cellarray[i].neighbors = 0;
-        // if(cellarray[i].life >= 3){
-        //     cellarray[i].life =0;
-        // }
+         if(cellarray[i].life >= 3){
+             cellarray[i].life =0;
+        }
     }
 }
 
