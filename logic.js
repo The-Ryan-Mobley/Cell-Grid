@@ -12,7 +12,7 @@ class cell {
     }
     coinflip() { //decides if cell starts as either active or inactive
         let activator = Math.floor(Math.random() * 100);
-        if (activator >= 45) {
+        if (activator >= 95) {
             this.active = true;
         }
     }
@@ -38,9 +38,12 @@ class cell {
         }
     }
     population() {                           //checks if cell has enough neighbors to stay active, and checks how long the cell has been alive
-        if (this.neighbors >= 6) {
+        if ((this.neighbors >= 3) && (this.neighbors < 7)) {
             this.active = true;
         } else {
+            this.active = false;
+        }
+        if(this.neighbors >= 7){
             this.active = false;
         }
 
@@ -104,7 +107,7 @@ function automation() {
 
         if (cellarray[i].active == false) {
             for (let j = 0; j < cl; j++) {
-                if (cellarray[j].neighbors >= 5) {
+                if (cellarray[j].neighbors >= 3) {
                     cellarray[i].newcell(cellarray[j].xpos, cellarray[j].ypos);
 
 
