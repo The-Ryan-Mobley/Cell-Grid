@@ -146,5 +146,5 @@ setInterval(function(){
     getneighborhood();
     action();
     newgeneration(); 
-}, 10);
+}, 100);
 
