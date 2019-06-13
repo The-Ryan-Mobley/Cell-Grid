@@ -120,9 +120,9 @@ function newgeneration(){
     for (let i = 0; i < 2547; i++) {
         
         cellarray[i].neighbors = 0;
-        if(cellarray[i].life >= 2){
-            cellarray[i].life =0;
-        }
+        //if(cellarray[i].life >= 2){
+            //cellarray[i].life =0;
+        //}
     }
 }
 
@@ -131,7 +131,7 @@ function action() {
         
 
         cellarray[i].population(); //population worksl
-        cellarray[i].life++;
+        //cellarray[i].life++;
     }
     automation();
     for(let j =0; j < cellarray.length; j++){
