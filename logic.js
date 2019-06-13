@@ -120,8 +120,8 @@ function newgeneration(){
     for (let i = 0; i < 2547; i++) {
         
         cellarray[i].neighbors = 0;
-        if(cellarray[j].life >= 5){
-            cellarray[j].life =0;
+        if(cellarray[i].life >= 5){
+            cellarray[i].life =0;
         }
     }
 }
