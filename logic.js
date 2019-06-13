@@ -9,7 +9,6 @@ class cell {
         this.ypos = y;                           //neighbors checks for adjacent active cells, decides if cells populate at end of the generation
         this.active = false;                     //life checks if the cell has already been active, and then must stay inactive for a set amount time
         this.neighbors = 0;                    
-        this.life = 0;
     }
     coinflip() {                                                //decides if cell starts as either active or inactive
         let activator = Math.floor(Math.random() * 100);
@@ -25,7 +24,6 @@ class cell {
         } else {
             ctx.fillStyle = "#f2f2f2";                              //""#f2f2f2""
             ctx.fillRect(this.xpos, this.ypos, 9, 9);
-
         }
     }
     neighborcheck(x, y) {                               //checks for active neighbors based on pixel distance
@@ -45,9 +43,7 @@ class cell {
         } else {
             this.active = false;
         }
-        if(this.life >= 2){
-            this.active = false;
-        }
+        
     }
     newcell(x,y){                                                       //checks distance of active cells
         let percentile = Math.floor(Math.random() * 100);               //(add extra varible to holld active 
@@ -120,9 +116,7 @@ function newgeneration(){
     for (let i = 0; i < 2547; i++) {
         
         cellarray[i].neighbors = 0;
-        //if(cellarray[i].life >= 2){
-            //cellarray[i].life =0;
-        //}
+        
     }
 }
 
@@ -131,7 +125,7 @@ function action() {
         
 
         cellarray[i].population(); //population worksl
-        //cellarray[i].life++;
+      
     }
     automation();
     for(let j =0; j < cellarray.length; j++){
