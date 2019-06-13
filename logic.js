@@ -58,7 +58,7 @@ class cell {
         let dis = Math.sqrt(xd + yd);
 
 
-        if((dis <= 14.5) && (percentile >= 45)){
+        if((dis <= 14.5) && (percentile >= 85)){
             this.active = true;
             
         }
