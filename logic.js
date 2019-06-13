@@ -13,7 +13,7 @@ class cell {
     }
     coinflip() { //decides if cell starts as either active or inactive
         let activator = Math.floor(Math.random() * 100);
-        if (activator >= 75) {
+        if (activator >= 65) {
             this.active = true;
         }
     }
