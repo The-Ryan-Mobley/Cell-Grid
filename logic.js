@@ -106,7 +106,7 @@ function automation(){
           
         if(cellarray[i].active == false){
             for (let j = 0; j < cl; j++) {
-                if (cellarray[j].neighbors >= 6) {
+                if (cellarray[j].neighbors >= 3) {
                     cellarray[i].newcell(cellarray[j].xpos,cellarray[j].ypos);
                   
                    
