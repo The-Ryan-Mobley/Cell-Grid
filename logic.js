@@ -104,17 +104,16 @@ function getneighborhood() { //nested loops causing performance issues
 function automation() {
     let cl = cellarray.length;
     for (let i = 0; i < cl; i++) {
+        cellarray[i].population();
 
         if (cellarray[i].active == false) {
             for (let j = 0; j < cl; j++) {
                 if (cellarray[j].neighbors >= 3) {
                     cellarray[i].newcell(cellarray[j].xpos, cellarray[j].ypos);
-
-
                 }
             }
-
         }
+        cellarray[i].drawcell(my_context);
     }
 }
 
@@ -124,25 +123,11 @@ function newgeneration() {
         cellarray[i].neighbors = 0;
     }
 }
-
-function action() {
-    for (let i = 0; i < cellarray.length; i++) {
-
-
-        cellarray[i].population();
-
-    }
-    automation();
-    for (let j = 0; j < cellarray.length; j++) {
-        cellarray[j].drawcell(my_context);
-
-    }
-}
-
+//*****************************************************code starts*********************************************/
 creategrid();
 
 setInterval(function () {
     getneighborhood();
-    action();
+    automation();
     newgeneration();
 }, 100);
