@@ -17,7 +17,7 @@ class cell {
         }
     }
     drawcell(ctx) { //draw function for the cell, based on active and inactive
-        if (this.active == true) {
+        if (this.active === true) {
 
             ctx.fillStyle = "#2ba81a"; //"#f97509"
             ctx.fillRect(this.xpos, this.ypos, 9, 9);
@@ -90,9 +90,9 @@ function getneighborhood() { //nested loops causing performance issues
     let cl = cellarray.length;
 
     for (let i = 0; i < cl; i++) {
-        if (cellarray[i].active == true) {
+        if (cellarray[i].active === true) {
             for (let j = 0; j < cl; j++) {
-                if (cellarray[j].active == true) {
+                if (cellarray[j].active === true) {
                     cellarray[i].neighborcheck(cellarray[j].xpos, cellarray[j].ypos);
                 }
             }
@@ -106,7 +106,7 @@ function automation() {
     for (let i = 0; i < cl; i++) {
         cellarray[i].population();
 
-        if (cellarray[i].active == false) {
+        if (cellarray[i].active === false) {
             for (let j = 0; j < cl; j++) {
                 if (cellarray[j].neighbors >= 3) {
                     cellarray[i].newcell(cellarray[j].xpos, cellarray[j].ypos);
