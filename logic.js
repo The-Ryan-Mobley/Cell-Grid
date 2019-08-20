@@ -73,7 +73,7 @@ function creategrid() {
     let yvalue = 0;
     for (var x = 0; x <= 2547; x++) {
 
-        if ((x + 1) % 51 == 0) {
+        if ((x + 1) % 51 === 0) {
             yvalue += 10;
             xvalue = 0;
         }
